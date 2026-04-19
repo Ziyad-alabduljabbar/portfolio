@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +37,6 @@ main{position:relative;z-index:2}
 .btn-outline{padding:13px 28px;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:10px;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:15px;cursor:pointer;transition:.3s;text-decoration:none;display:inline-block}
 .btn-outline:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
 
-/* اللوحة الزجاجية للإحصائيات */
 .hero-stats-panel {
   display: flex;
   background: rgba(255, 255, 255, 0.02);
@@ -46,16 +45,15 @@ main{position:relative;z-index:2}
   margin-top: 50px;
   padding: 30px 0;
   backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 .stat-item {
   flex: 1;
   text-align: center;
-  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
   padding: 0 15px;
 }
 .stat-item:last-child {
-  border-left: none;
+  border-right: none;
 }
 .stat-num {
   font-family: 'Space Mono', monospace;
@@ -121,12 +119,17 @@ footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:v
 .fade-in{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
 
+/* RTL Adjustments */
+html[dir="rtl"] body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
+html[dir="rtl"] .stat-item { border-right: none; border-left: 1px solid var(--border); }
+html[dir="rtl"] .stat-item:last-child { border-left: none; }
+
 @media(max-width:768px){
   nav{padding:16px 20px}
   .nav-links{display:none}
   .hero{padding:100px 20px 60px}
   .hero-stats-panel { flex-direction: column; gap: 30px; padding: 30px; }
-  .stat-item { border-left: none; border-bottom: 1px solid var(--border); padding-bottom: 30px; }
+  .stat-item { border-right: none; border-left: none; border-bottom: 1px solid var(--border); padding-bottom: 30px; }
   .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
   section{padding:70px 20px}
   .about-grid,.contact-wrap{grid-template-columns:1fr}
@@ -140,14 +143,14 @@ footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:v
   <div class="nav-logo">PORTFOLIO</div>
   <div class="nav-right">
     <ul class="nav-links">
-      <li><a href="#about" class="t" data-ar="عني" data-en="About">عني</a></li>
-      <li><a href="#skills" class="t" data-ar="المهارات" data-en="Skills">المهارات</a></li>
-      <li><a href="#projects" class="t" data-ar="المشاريع" data-en="Projects">المشاريع</a></li>
-      <li><a href="#contact" class="t" data-ar="تواصل" data-en="Contact">تواصل</a></li>
+      <li><a href="#about" class="t" data-ar="عني" data-en="About">About</a></li>
+      <li><a href="#skills" class="t" data-ar="المهارات" data-en="Skills">Skills</a></li>
+      <li><a href="#projects" class="t" data-ar="المشاريع" data-en="Projects">Projects</a></li>
+      <li><a href="#contact" class="t" data-ar="تواصل" data-en="Contact">Contact</a></li>
     </ul>
     <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('ar')">AR</button>
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('ar')">AR</button>
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
     </div>
   </div>
 </nav>
@@ -155,30 +158,30 @@ footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:v
 <main>
 <div class="hero">
   <div>
-    <div class="hero-tag t" data-ar="طالب علوم حاسب | مسار علم البيانات" data-en="CS STUDENT | DATA SCIENCE TRACK">طالب علوم حاسب | مسار علم البيانات</div>
-    <h1 class="t" data-ar="زياد<span> العبدالجبار</span>" data-en="Ziyad<span> Al-Abduljabbar</span>">زياد<span> العبدالجبار</span></h1>
-    <p class="hero-sub t" data-ar="أركز على تحويل مجموعات البيانات الضخمة إلى حلول ذكية ورؤى تحليلية، مع اهتمام خاص بتطوير أنظمة التوصية ومعالجة اللغات الطبيعية." data-en="Focused on transforming large datasets into intelligent solutions and analytical insights, with a special interest in recommendation systems and NLP.">أركز على تحويل مجموعات البيانات الضخمة إلى حلول ذكية ورؤى تحليلية، مع اهتمام خاص بتطوير أنظمة التوصية ومعالجة اللغات الطبيعية.</p>
+    <div class="hero-tag t" data-ar="طالب علوم حاسب | مسار علم البيانات" data-en="CS STUDENT | DATA SCIENCE TRACK">CS STUDENT | DATA SCIENCE TRACK</div>
+    <h1 class="t" data-ar="زياد<span> العبدالجبار</span>" data-en="Ziyad<span> Al-Abduljabbar</span>">Ziyad<span> Al-Abduljabbar</span></h1>
+    <p class="hero-sub t" data-ar="أركز على تحويل مجموعات البيانات الضخمة إلى حلول ذكية ورؤى تحليلية، مع اهتمام خاص بتطوير أنظمة التوصية ومعالجة اللغات الطبيعية." data-en="Focused on transforming large datasets into intelligent solutions and analytical insights, with a special interest in recommendation systems and NLP.">Focused on transforming large datasets into intelligent solutions and analytical insights, with a special interest in recommendation systems and NLP.</p>
     <div class="hero-btns">
-      <a href="#projects" class="btn-primary t" data-ar="استعرض المشاريع" data-en="View Projects">استعرض المشاريع</a>
-      <a href="https://github.com/ziyad-alabduljabbar" target="_blank" class="btn-outline">GitHub ↗</a>
+      <a href="#projects" class="btn-primary t" data-ar="استعرض المشاريع" data-en="View Projects">View Projects</a>
+      <a href="https://linkedin.com/in/ziyad-al-abduljabbar" target="_blank" class="btn-outline">LinkedIn ↗</a>
     </div>
     
     <div class="hero-stats-panel">
       <div class="stat-item">
         <div class="stat-num">800K+</div>
-        <div class="stat-label t" data-ar="سجل بيانات تم تحليله" data-en="Records Analyzed">سجل بيانات تم تحليله</div>
+        <div class="stat-label t" data-ar="سجل بيانات تم تحليله" data-en="Records Analyzed">Records Analyzed</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">GP2</div>
-        <div class="stat-label t" data-ar="مشروع التخرج قيد التنفيذ" data-en="Graduation Project (Ongoing)">مشروع التخرج قيد التنفيذ</div>
+        <div class="stat-label t" data-ar="مشروع التخرج قيد التنفيذ" data-en="Graduation Project (Ongoing)">Graduation Project (Ongoing)</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">4+</div>
-        <div class="stat-label t" data-ar="مشاريع منشورة" data-en="Published Projects">مشاريع منشورة</div>
+        <div class="stat-label t" data-ar="مشاريع منشورة" data-en="Published Projects">Published Projects</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">10+</div>
-        <div class="stat-label t" data-ar="لغات وتقنيات برمجة" data-en="Tech Stacks & Tools">لغات وتقنيات برمجة</div>
+        <div class="stat-label t" data-ar="لغات وتقنيات برمجة" data-en="Tech Stacks & Tools">Tech Stacks & Tools</div>
       </div>
     </div>
   </div>
@@ -186,84 +189,68 @@ footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:v
 
 <section id="about" class="fade-in">
   <div class="section-tag">// ABOUT</div>
-  <h2 class="section-title t" data-ar="نبذة عني" data-en="About Me">نبذة عني</h2>
+  <h2 class="section-title t" data-ar="نبذة عني" data-en="About Me">About Me</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p class="t" data-ar="أنا طالب في السنة الأخيرة بجامعة المجمعة، متخصص في مسار علم البيانات. أمتلك شغفاً كبيراً بالتعامل مع البيانات المعقدة وبناء النماذج التي تحل مشاكل واقعية." data-en="Final year student at Majmaah University, specializing in Data Science. Passionate about handling complex data and building models that solve real-world problems.">أنا طالب في السنة الأخيرة بجامعة المجمعة، متخصص في مسار علم البيانات. أمتلك شغفاً كبيراً بالتعامل مع البيانات المعقدة وبناء النماذج التي تحل مشاكل واقعية.</p>
-      <p class="t" data-ar="خبرتي العملية تشمل تحليل أكثر من 800 ألف سجل لبيانات العقارات السعودية، وتطوير وتطبيق مفاهيم البرمجة المتقدمة وهياكل البيانات." data-en="My experience includes analyzing over 800,000 Saudi real estate records and applying advanced programming concepts and data structures.">خبرتي العملية تشمل تحليل أكثر من 800 ألف سجل لبيانات العقارات السعودية، وتطوير وتطبيق مفاهيم البرمجة المتقدمة وهياكل البيانات.</p>
-      <p class="t" data-ar="أعمل حالياً على مشروع تخرجي 'الورّاق'، وهو نظام توصية أكاديمي يهدف لرفع دقة التوصيات باستخدام خوارزميات معالجة اللغات الطبيعية (NLP) ودمج واجهات النماذج اللغوية (LLM API)." data-en="Currently working on my graduation project 'Al-Warraq', an academic recommendation system aiming to boost accuracy using NLP algorithms and LLM APIs.">أعمل حالياً على مشروع تخرجي 'الورّاق'، وهو نظام توصية أكاديمي يهدف لرفع دقة التوصيات باستخدام خوارزميات معالجة اللغات الطبيعية (NLP) ودمج واجهات النماذج اللغوية (LLM API).</p>
+      <p class="t" data-ar="أنا طالب في السنة الأخيرة بجامعة المجمعة، متخصص في مسار علم البيانات. أمتلك شغفاً كبيراً بالتعامل مع البيانات المعقدة وبناء النماذج التي تحل مشاكل واقعية." data-en="Final year student at Majmaah University, specializing in Data Science. Passionate about handling complex data and building models that solve real-world problems.">Final year student at Majmaah University, specializing in Data Science. Passionate about handling complex data and building models that solve real-world problems.</p>
+      <p class="t" data-ar="خبرتي العملية تشمل تحليل أكثر من 800 ألف سجل لبيانات العقارات السعودية، وتطوير وتطبيق مفاهيم البرمجة المتقدمة وهياكل البيانات." data-en="My experience includes analyzing over 800,000 Saudi real estate records and applying advanced programming concepts and data structures.">My experience includes analyzing over 800,000 Saudi real estate records and applying advanced programming concepts and data structures.</p>
+      <p class="t" data-ar="أعمل حالياً على مشروع تخرجي 'الورّاق'، وهو نظام توصية أكاديمي يهدف لرفع دقة التوصيات باستخدام خوارزميات معالجة اللغات الطبيعية (NLP) ودمج واجهات النماذج اللغوية (LLM API)." data-en="Currently working on my graduation project 'Al-Warraq', an academic recommendation system aiming to boost accuracy using NLP algorithms and LLM APIs.">Currently working on my graduation project 'Al-Warraq', an academic recommendation system aiming to boost accuracy using NLP algorithms and LLM APIs.</p>
     </div>
     <div class="about-card">
-      <div class="about-card-row"><span class="about-card-label t" data-ar="الجامعة" data-en="University">الجامعة</span><span class="about-card-value">Majmaah University</span></div>
-      <div class="about-card-row"><span class="about-card-label t" data-ar="التخرج" data-en="Graduation">التخرج</span><span class="about-card-value">2026</span></div>
-      <div class="about-card-row"><span class="about-card-label t" data-ar="المسار" data-en="Track">المسار</span><span class="about-card-value">Data Science Track</span></div>
+      <div class="about-card-row"><span class="about-card-label t" data-ar="الجامعة" data-en="University">University</span><span class="about-card-value">Majmaah University</span></div>
+      <div class="about-card-row"><span class="about-card-label t" data-ar="التخرج" data-en="Graduation">Graduation</span><span class="about-card-value">2026</span></div>
+      <div class="about-card-row"><span class="about-card-label t" data-ar="المسار" data-en="Track">Track</span><span class="about-card-value">Data Science Track</span></div>
     </div>
   </div>
 </section>
 
 <section id="skills" class="fade-in">
   <div class="section-tag">// SKILLS</div>
-  <h2 class="section-title t" data-ar="المهارات التقنية" data-en="Technical Skills">المهارات التقنية</h2>
-  
+  <h2 class="section-title t" data-ar="المهارات التقنية" data-en="Technical Skills">Technical Skills</h2>
   <div class="langs-grid">
     <div class="lang-card"><div class="lang-icon">🐍</div><div class="lang-name">Python</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:95%"></div></div></div>
     <div class="lang-card"><div class="lang-icon">📊</div><div class="lang-name">R</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:85%"></div></div></div>
     <div class="lang-card"><div class="lang-icon">🗄️</div><div class="lang-name">SQL</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:80%"></div></div></div>
     <div class="lang-card"><div class="lang-icon">⚙️</div><div class="lang-name">C++</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:75%"></div></div></div>
   </div>
-  
   <div class="skills-grid">
     <div class="skill-category">
       <div class="skill-cat-title">VISUALIZATION</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span><span class="skill-tag">Power BI</span>
-      </div>
+      <div class="skill-tags"><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span><span class="skill-tag">Power BI</span></div>
     </div>
     <div class="skill-category">
       <div class="skill-cat-title">AI & NLP</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Natural Language Processing</span><span class="skill-tag">LLM API Integration</span>
-      </div>
+      <div class="skill-tags"><span class="skill-tag">NLP</span><span class="skill-tag">LLM API Integration</span></div>
     </div>
     <div class="skill-category">
       <div class="skill-cat-title">DATA ANALYSIS</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Data Cleaning</span><span class="skill-tag">EDA</span><span class="skill-tag">Feature Engineering</span>
-      </div>
+      <div class="skill-tags"><span class="skill-tag">Data Cleaning</span><span class="skill-tag">EDA</span><span class="skill-tag">Feature Engineering</span></div>
     </div>
     <div class="skill-category">
       <div class="skill-cat-title">MACHINE LEARNING</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Scikit-learn</span><span class="skill-tag">Recommendation Systems</span>
-      </div>
-    </div>
-    <div class="skill-category">
-      <div class="skill-cat-title">TOOLS & FRAMEWORKS</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Git</span><span class="skill-tag">Google Colab</span><span class="skill-tag">SQLAlchemy</span>
-      </div>
+      <div class="skill-tags"><span class="skill-tag">Scikit-learn</span><span class="skill-tag">Recommendation Systems</span></div>
     </div>
   </div>
 </section>
 
 <section id="projects" class="fade-in">
   <div class="section-tag">// PROJECTS</div>
-  <h2 class="section-title t" data-ar="مشاريع GitHub" data-en="GitHub Projects">مشاريع GitHub</h2>
+  <h2 class="section-title t" data-ar="مشاريع GitHub" data-en="GitHub Projects">GitHub Projects</h2>
   <div class="projects-grid" id="projects-container"></div>
 </section>
 
 <section id="contact" class="fade-in">
   <div class="section-tag">// CONTACT</div>
-  <h2 class="section-title t" data-ar="تواصل معي" data-en="Get In Touch">تواصل معي</h2>
+  <h2 class="section-title t" data-ar="تواصل معي" data-en="Get In Touch">Get In Touch</h2>
   <div class="contact-wrap">
     <div class="contact-text">
-      <p class="t" data-ar="هل تبحث عن متدرب أو متعاون في مجال علم البيانات؟ أنا دائماً مهتم بالتواصل ومناقشة الفرص المهنية." data-en="Looking for a data science intern or collaborator? I'm always open to discussing professional opportunities.">هل تبحث عن متدرب أو متعاون في مجال علم البيانات؟ أنا دائماً مهتم بالتواصل ومناقشة الفرص المهنية.</p>
-      <a href="https://www.linkedin.com/in/ziyad-alabduljabbar" target="_blank" class="btn-primary t" data-ar="تواصل على LinkedIn ↗" data-en="Connect on LinkedIn ↗">تواصل على LinkedIn ↗</a>
+      <p class="t" data-ar="هل تبحث عن متدرب أو متعاون في مجال علم البيانات؟ أنا دائماً مهتم بالتواصل ومناقشة الفرص المهنية." data-en="Looking for a data science intern or collaborator? I'm always open to discussing professional opportunities.">Looking for a data science intern or collaborator? I'm always open to discussing professional opportunities.</p>
+      <a href="https://linkedin.com/in/ziyad-al-abduljabbar" target="_blank" class="btn-primary t" data-ar="تواصل على LinkedIn ↗" data-en="Connect on LinkedIn ↗">Connect on LinkedIn ↗</a>
     </div>
     <div class="contact-links">
-      <a href="https://www.linkedin.com/in/ziyad-alabduljabbar" target="_blank" class="contact-link">
+      <a href="https://linkedin.com/in/ziyad-al-abduljabbar" target="_blank" class="contact-link">
         <div class="contact-link-icon">in</div>
-        <div><div class="contact-link-label">LinkedIn</div><div class="contact-link-value">ziyad-alabduljabbar</div></div>
+        <div><div class="contact-link-label">LinkedIn</div><div class="contact-link-value">ziyad-al-abduljabbar</div></div>
       </a>
       <a href="https://github.com/ziyad-alabduljabbar" target="_blank" class="contact-link">
         <div class="contact-link-icon">GH</div>
@@ -275,26 +262,26 @@ footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:v
 </main>
 
 <footer>
-  <p class="t" data-ar="© 2026 زياد العبدالجبار — صُنع بشغف لعلم البيانات" data-en="© 2026 Ziyad Al-Abduljabbar — Built with passion for Data Science">© 2026 زياد العبدالجبار — صُنع بشغف لعلم البيانات</p>
+  <p class="t" data-ar="© 2026 زياد العبدالجبار — صُنع بشغف لعلم البيانات" data-en="© 2026 Ziyad Al-Abduljabbar — Built with passion for Data Science">© 2026 Ziyad Al-Abduljabbar — Built with passion for Data Science</p>
 </footer>
 
 <script>
 const projects = {
   ar:[
-    {name:"تحليل العقارات السعودية",desc:"تحليل أكثر من 800,000 إعلان عقاري في السعودية، للكشف عن اتجاهات السوق، التوزيع الإقليمي، والعلاقات السعرية.",url:"https://github.com/ziyad-alabduljabbar/Saudi-Real-Estate-Analysis",topics:["Python","Pandas","Seaborn","EDA"]},
-    {name:"تحليل حوادث المرور السعودية",desc:"تحليل بيانات الحوادث للفترة 2016-2019 عبر 13 منطقة سعودية باستخدام لغة R ومكتبة tidyverse.",url:"https://github.com/ziyad-alabduljabbar/saudi-traffic-accidents-analysis",topics:["R","tidyverse","Data Analysis"]},
-    {name:"نظام إدارة المطعم (C++)",desc:"نظام مطعم يطبق هياكل البيانات الأساسية: Linked List، Stack، و Queue.",url:"https://github.com/ziyad-alabduljabbar/Restaurant-DataStructures",topics:["C++","OOP","Data Structures"]},
-    {name:"نظام إدارة أعضاء المجتمع (C++)",desc:"نظام إدارة يعتمد على البرمجة كائنية التوجه (OOP) مع تطبيق مفاهيم تعدد الأشكال والوراثة.",url:"https://github.com/ziyad-alabduljabbar/CommunityMember-TermProject",topics:["C++","OOP"]}
+    {name:"تحليل العقارات السعودية",desc:"تحليل أكثر من 800,000 إعلان عقاري في السعودية، للكشف عن اتجاهات السوق.",url:"https://github.com/ziyad-alabduljabbar/Saudi-Real-Estate-Analysis",topics:["Python","Pandas","EDA"]},
+    {name:"تحليل حوادث المرور",desc:"تحليل بيانات الحوادث للفترة 2016-2019 عبر 13 منطقة سعودية.",url:"https://github.com/ziyad-alabduljabbar/saudi-traffic-accidents-analysis",topics:["R","tidyverse"]},
+    {name:"نظام إدارة المطعم (C++)",desc:"نظام يطبق هياكل البيانات: Linked List، Stack، و Queue.",url:"https://github.com/ziyad-alabduljabbar/Restaurant-DataStructures",topics:["C++","Data Structures"]},
+    {name:"إدارة أعضاء المجتمع",desc:"نظام يعتمد على الـ OOP مع تطبيق الوراثة وتعدد الأشكال.",url:"https://github.com/ziyad-alabduljabbar/CommunityMember-TermProject",topics:["C++","OOP"]}
   ],
   en:[
-    {name:"Saudi Real Estate Analysis",desc:"Analysis of 800,000+ listings in Saudi Arabia, uncovering market trends, regional distribution, and price correlations.",url:"https://github.com/ziyad-alabduljabbar/Saudi-Real-Estate-Analysis",topics:["Python","Pandas","Seaborn","EDA"]},
-    {name:"Saudi Traffic Accidents Analysis",desc:"Analysis of accident data 2016-2019 across 13 Saudi regions using R and tidyverse.",url:"https://github.com/ziyad-alabduljabbar/saudi-traffic-accidents-analysis",topics:["R","tidyverse","Data Analysis"]},
-    {name:"Restaurant Management System (C++)",desc:"Restaurant system implementing Linked List, Stack and Queue data structures.",url:"https://github.com/ziyad-alabduljabbar/Restaurant-DataStructures",topics:["C++","OOP","Data Structures"]},
-    {name:"Community Member System (C++)",desc:"OOP-based community management system with polymorphism and inheritance.",url:"https://github.com/ziyad-alabduljabbar/CommunityMember-TermProject",topics:["C++","OOP"]}
+    {name:"Saudi Real Estate Analysis",desc:"Analysis of 800,000+ listings in KSA to uncover market trends and regional pricing.",url:"https://github.com/ziyad-alabduljabbar/Saudi-Real-Estate-Analysis",topics:["Python","Pandas","EDA"]},
+    {name:"Saudi Traffic Accidents Analysis",desc:"Exploratory data analysis of traffic accidents across 13 regions using R.",url:"https://github.com/ziyad-alabduljabbar/saudi-traffic-accidents-analysis",topics:["R","tidyverse"]},
+    {name:"Restaurant Management (C++)",desc:"Implementing fundamental data structures: Linked List, Stack, and Queue.",url:"https://github.com/ziyad-alabduljabbar/Restaurant-DataStructures",topics:["C++","Data Structures"]},
+    {name:"Community Member System",desc:"An OOP-based system focusing on inheritance and polymorphism.",url:"https://github.com/ziyad-alabduljabbar/CommunityMember-TermProject",topics:["C++","OOP"]}
   ]
 };
 
-let lang = "ar";
+let lang = "en";
 
 function renderProjects(l){
   const c = document.getElementById("projects-container");
@@ -316,7 +303,7 @@ function setLang(l){
   renderProjects(l);
 }
 
-renderProjects("ar");
+renderProjects("en");
 const obs = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:0.1});
 document.querySelectorAll(".fade-in").forEach(el=>obs.observe(el));
 </script>
