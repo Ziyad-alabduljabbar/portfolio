@@ -36,40 +36,11 @@ main{position:relative;z-index:2}
 .btn-primary:hover{background:#00c4a6;transform:translateY(-2px)}
 .btn-outline{padding:13px 28px;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:10px;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:15px;cursor:pointer;transition:.3s;text-decoration:none;display:inline-block}
 .btn-outline:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
-
-.hero-stats-panel {
-  display: flex;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  margin-top: 50px;
-  padding: 30px 0;
-  backdrop-filter: blur(10px);
-}
-.stat-item {
-  flex: 1;
-  text-align: center;
-  border-right: 1px solid var(--border);
-  padding: 0 15px;
-}
-.stat-item:last-child {
-  border-right: none;
-}
-.stat-num {
-  font-family: 'Space Mono', monospace;
-  font-size: 2.2rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, var(--primary), #00a8ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 8px;
-}
-.stat-label {
-  font-size: 13px;
-  color: var(--muted);
-  font-weight: 600;
-}
-
+.hero-stats-panel{display:flex;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:20px;margin-top:50px;padding:30px 0;backdrop-filter:blur(10px)}
+.stat-item{flex:1;text-align:center;border-right:1px solid var(--border);padding:0 15px}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:'Space Mono',monospace;font-size:2.2rem;font-weight:700;background:linear-gradient(90deg,var(--primary),#00a8ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.stat-label{font-size:13px;color:var(--muted);font-weight:600}
 section{padding:100px 40px;max-width:1100px;margin:0 auto}
 .section-tag{font-family:'Space Mono',monospace;font-size:11px;color:var(--primary);letter-spacing:3px;margin-bottom:12px}
 .section-title{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;margin-bottom:50px}
@@ -80,7 +51,6 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto}
 .about-card-row:last-child{border-bottom:none}
 .about-card-label{color:var(--muted)}
 .about-card-value{color:var(--primary);font-family:'Space Mono',monospace;font-size:13px}
-
 .langs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-bottom:40px}
 .lang-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center;transition:.3s}
 .lang-card:hover{border-color:rgba(0,229,192,0.3)}
@@ -88,14 +58,12 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto}
 .lang-name{font-family:'Space Mono',monospace;font-size:14px;color:var(--primary)}
 .lang-bar-wrap{margin-top:12px;background:rgba(255,255,255,0.05);border-radius:99px;height:4px}
 .lang-bar{height:4px;border-radius:99px;background:linear-gradient(90deg,var(--primary),#00a8ff)}
-
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
 .skill-category{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;transition:.3s}
 .skill-category:hover{border-color:rgba(0,229,192,0.3);transform:translateY(-4px)}
 .skill-cat-title{font-size:11px;color:var(--primary);letter-spacing:2px;font-family:'Space Mono',monospace;margin-bottom:16px;text-transform:uppercase}
 .skill-tags{display:flex;flex-wrap:wrap;gap:8px}
 .skill-tag{background:rgba(0,229,192,0.08);border:1px solid rgba(0,229,192,0.15);color:var(--text);padding:5px 12px;border-radius:99px;font-size:12px}
-
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
 .project-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px;transition:.3s;display:flex;flex-direction:column;gap:12px}
 .project-card:hover{border-color:rgba(0,229,192,0.3);transform:translateY(-6px)}
@@ -105,7 +73,6 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto}
 .project-link:hover{gap:10px}
 .project-langs{display:flex;flex-wrap:wrap;gap:6px}
 .project-lang{background:rgba(255,255,255,0.05);padding:3px 10px;border-radius:99px;font-size:11px;color:var(--muted)}
-
 .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .contact-text p{color:var(--muted);line-height:1.9;margin-bottom:24px}
 .contact-links{display:flex;flex-direction:column;gap:12px}
@@ -114,23 +81,17 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto}
 .contact-link-icon{width:36px;height:36px;background:rgba(0,229,192,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-family:'Space Mono',monospace;font-weight:700;color:var(--primary)}
 .contact-link-label{font-size:12px;color:var(--muted)}
 .contact-link-value{font-size:14px;font-weight:600}
-
 footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;position:relative;z-index:2}
 .fade-in{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
-
-/* RTL Adjustments */
-html[dir="rtl"] body { font-family: 'IBM Plex Sans Arabic', sans-serif; }
-html[dir="rtl"] .stat-item { border-right: none; border-left: 1px solid var(--border); }
-html[dir="rtl"] .stat-item:last-child { border-left: none; }
-
+html[dir="rtl"] .stat-item{border-right:none;border-left:1px solid var(--border)}
+html[dir="rtl"] .stat-item:last-child{border-left:none}
 @media(max-width:768px){
-  nav{padding:16px 20px}
-  .nav-links{display:none}
+  nav{padding:16px 20px}.nav-links{display:none}
   .hero{padding:100px 20px 60px}
-  .hero-stats-panel { flex-direction: column; gap: 30px; padding: 30px; }
-  .stat-item { border-right: none; border-left: none; border-bottom: 1px solid var(--border); padding-bottom: 30px; }
-  .stat-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .hero-stats-panel{flex-direction:column;gap:30px;padding:30px}
+  .stat-item{border-right:none;border-left:none;border-bottom:1px solid var(--border);padding-bottom:30px}
+  .stat-item:last-child{border-bottom:none;padding-bottom:0}
   section{padding:70px 20px}
   .about-grid,.contact-wrap{grid-template-columns:1fr}
 }
@@ -159,30 +120,17 @@ html[dir="rtl"] .stat-item:last-child { border-left: none; }
 <div class="hero">
   <div>
     <div class="hero-tag t" data-ar="طالب علوم حاسب | مسار علم البيانات" data-en="CS STUDENT | DATA SCIENCE TRACK">CS STUDENT | DATA SCIENCE TRACK</div>
-    <h1 class="t" data-ar="زياد<span> العبدالجبار</span>" data-en="Ziyad<span> Al-Abduljabbar</span>">Ziyad<span> Al-Abduljabbar</span></h1>
+    <h1 id="hero-name">Ziyad<span> Al-Abduljabbar</span></h1>
     <p class="hero-sub t" data-ar="أركز على تحويل مجموعات البيانات الضخمة إلى حلول ذكية ورؤى تحليلية، مع اهتمام خاص بتطوير أنظمة التوصية ومعالجة اللغات الطبيعية." data-en="Focused on transforming large datasets into intelligent solutions and analytical insights, with a special interest in recommendation systems and NLP.">Focused on transforming large datasets into intelligent solutions and analytical insights, with a special interest in recommendation systems and NLP.</p>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary t" data-ar="استعرض المشاريع" data-en="View Projects">View Projects</a>
       <a href="https://linkedin.com/in/ziyad-al-abduljabbar" target="_blank" class="btn-outline">LinkedIn ↗</a>
     </div>
-    
     <div class="hero-stats-panel">
-      <div class="stat-item">
-        <div class="stat-num">800K+</div>
-        <div class="stat-label t" data-ar="سجل بيانات تم تحليله" data-en="Records Analyzed">Records Analyzed</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">GP2</div>
-        <div class="stat-label t" data-ar="مشروع التخرج قيد التنفيذ" data-en="Graduation Project (Ongoing)">Graduation Project (Ongoing)</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">4+</div>
-        <div class="stat-label t" data-ar="مشاريع منشورة" data-en="Published Projects">Published Projects</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">10+</div>
-        <div class="stat-label t" data-ar="لغات وتقنيات برمجة" data-en="Tech Stacks & Tools">Tech Stacks & Tools</div>
-      </div>
+      <div class="stat-item"><div class="stat-num">800K+</div><div class="stat-label t" data-ar="سجل بيانات تم تحليله" data-en="Records Analyzed">Records Analyzed</div></div>
+      <div class="stat-item"><div class="stat-num">GP2</div><div class="stat-label t" data-ar="مشروع التخرج قيد التنفيذ" data-en="Graduation Project (Ongoing)">Graduation Project (Ongoing)</div></div>
+      <div class="stat-item"><div class="stat-num">4+</div><div class="stat-label t" data-ar="مشاريع منشورة" data-en="Published Projects">Published Projects</div></div>
+      <div class="stat-item"><div class="stat-num">10+</div><div class="stat-label t" data-ar="لغات وتقنيات برمجة" data-en="Tech Stacks & Tools">Tech Stacks & Tools</div></div>
     </div>
   </div>
 </div>
@@ -194,7 +142,7 @@ html[dir="rtl"] .stat-item:last-child { border-left: none; }
     <div class="about-text">
       <p class="t" data-ar="أنا طالب في السنة الأخيرة بجامعة المجمعة، متخصص في مسار علم البيانات. أمتلك شغفاً كبيراً بالتعامل مع البيانات المعقدة وبناء النماذج التي تحل مشاكل واقعية." data-en="Final year student at Majmaah University, specializing in Data Science. Passionate about handling complex data and building models that solve real-world problems.">Final year student at Majmaah University, specializing in Data Science. Passionate about handling complex data and building models that solve real-world problems.</p>
       <p class="t" data-ar="خبرتي العملية تشمل تحليل أكثر من 800 ألف سجل لبيانات العقارات السعودية، وتطوير وتطبيق مفاهيم البرمجة المتقدمة وهياكل البيانات." data-en="My experience includes analyzing over 800,000 Saudi real estate records and applying advanced programming concepts and data structures.">My experience includes analyzing over 800,000 Saudi real estate records and applying advanced programming concepts and data structures.</p>
-      <p class="t" data-ar="أعمل حالياً على مشروع تخرجي 'الورّاق'، وهو نظام توصية أكاديمي يهدف لرفع دقة التوصيات باستخدام خوارزميات معالجة اللغات الطبيعية (NLP) ودمج واجهات النماذج اللغوية (LLM API)." data-en="Currently working on my graduation project 'Al-Warraq', an academic recommendation system aiming to boost accuracy using NLP algorithms and LLM APIs.">Currently working on my graduation project 'Al-Warraq', an academic recommendation system aiming to boost accuracy using NLP algorithms and LLM APIs.</p>
+      <p class="t" data-ar="أعمل حالياً على مشروع تخرجي 'الورّاق'، وهو نظام توصية أكاديمي يهدف لرفع دقة التوصيات باستخدام خوارزميات NLP ودمج LLM API." data-en="Currently working on my graduation project 'Al-Warraq', an academic recommendation system aiming to boost accuracy using NLP algorithms and LLM APIs.">Currently working on my graduation project 'Al-Warraq', an academic recommendation system aiming to boost accuracy using NLP algorithms and LLM APIs.</p>
     </div>
     <div class="about-card">
       <div class="about-card-row"><span class="about-card-label t" data-ar="الجامعة" data-en="University">University</span><span class="about-card-value">Majmaah University</span></div>
@@ -214,22 +162,10 @@ html[dir="rtl"] .stat-item:last-child { border-left: none; }
     <div class="lang-card"><div class="lang-icon">⚙️</div><div class="lang-name">C++</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:75%"></div></div></div>
   </div>
   <div class="skills-grid">
-    <div class="skill-category">
-      <div class="skill-cat-title">VISUALIZATION</div>
-      <div class="skill-tags"><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span><span class="skill-tag">Power BI</span></div>
-    </div>
-    <div class="skill-category">
-      <div class="skill-cat-title">AI & NLP</div>
-      <div class="skill-tags"><span class="skill-tag">NLP</span><span class="skill-tag">LLM API Integration</span></div>
-    </div>
-    <div class="skill-category">
-      <div class="skill-cat-title">DATA ANALYSIS</div>
-      <div class="skill-tags"><span class="skill-tag">Data Cleaning</span><span class="skill-tag">EDA</span><span class="skill-tag">Feature Engineering</span></div>
-    </div>
-    <div class="skill-category">
-      <div class="skill-cat-title">MACHINE LEARNING</div>
-      <div class="skill-tags"><span class="skill-tag">Scikit-learn</span><span class="skill-tag">Recommendation Systems</span></div>
-    </div>
+    <div class="skill-category"><div class="skill-cat-title">VISUALIZATION</div><div class="skill-tags"><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span><span class="skill-tag">Power BI</span></div></div>
+    <div class="skill-category"><div class="skill-cat-title">AI & NLP</div><div class="skill-tags"><span class="skill-tag">NLP</span><span class="skill-tag">LLM API Integration</span></div></div>
+    <div class="skill-category"><div class="skill-cat-title">DATA ANALYSIS</div><div class="skill-tags"><span class="skill-tag">Data Cleaning</span><span class="skill-tag">EDA</span><span class="skill-tag">Feature Engineering</span></div></div>
+    <div class="skill-category"><div class="skill-cat-title">MACHINE LEARNING</div><div class="skill-tags"><span class="skill-tag">Scikit-learn</span><span class="skill-tag">Recommendation Systems</span></div></div>
   </div>
 </section>
 
@@ -281,6 +217,11 @@ const projects = {
   ]
 };
 
+const heroNames = {
+  ar: 'زياد<span> العبدالجبار</span>',
+  en: 'Ziyad<span> Al-Abduljabbar</span>'
+};
+
 let lang = "en";
 
 function renderProjects(l){
@@ -289,7 +230,7 @@ function renderProjects(l){
   projects[l].forEach(p=>{
     const d = document.createElement("div");
     d.className = "project-card";
-    d.innerHTML = `<h3>${p.name}</h3><p>${p.desc}</p><div class="project-langs">${p.topics.map(t=>`<span class="project-lang">${t}</span>`).join("")}</div><a href="${p.url}" target="_blank" class="project-link">${l==='ar'?'عرض على GitHub →':'View on GitHub →'}</a>`;
+    d.innerHTML = `<h3>${p.name}</h3><p>${p.desc}</p><div class="project-langs">${p.topics.map(t=>`<span class="project-lang">${t}</span>`).join("")}</div><a href="${p.url}" target="_blank" class="project-link">${l==='ar'?'عرض على GitHub \u2192':'View on GitHub \u2192'}</a>`;
     c.appendChild(d);
   });
 }
@@ -299,6 +240,7 @@ function setLang(l){
   document.documentElement.lang = l;
   document.documentElement.dir = l==='ar'?'rtl':'ltr';
   document.querySelectorAll('.t').forEach(el=>{ if(el.dataset[l]) el.textContent=el.dataset[l]; });
+  document.getElementById('hero-name').innerHTML = heroNames[l];
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
   renderProjects(l);
 }
