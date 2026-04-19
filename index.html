@@ -3,170 +3,235 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ziad | Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+<title>Ziyad Al-Abduljabbar | Data Scientist</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0b0f17;
-  --card:rgba(255,255,255,0.05);
-  --border:rgba(255,255,255,0.1);
-  --primary:#00ffd5;
-  --accent:#ff3d6e;
-}
-
+:root{--bg:#060a12;--surface:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08);--primary:#00e5c0;--text:#e8eaf0;--muted:rgba(232,234,240,0.5)}
 *{margin:0;padding:0;box-sizing:border-box}
-
-body{
-  font-family:'IBM Plex Sans Arabic',sans-serif;
-  background:var(--bg);
-  color:#fff;
-  overflow-x:hidden;
-}
-
-/* BACKGROUND */
-body::before{
-  content:"";
-  position:fixed;
-  width:200%;
-  height:200%;
-  background:
-    radial-gradient(circle at 20% 20%, #00ffd5 0%, transparent 30%),
-    radial-gradient(circle at 80% 70%, #ff3d6e 0%, transparent 30%);
-  filter:blur(120px);
-  z-index:-1;
-}
-
-/* HERO */
-.hero{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
-}
-
-.hero h1{
-  font-size:clamp(3rem,8vw,6rem);
-  font-weight:700;
-}
-
-.hero p{
-  opacity:.7;
-  margin-top:10px;
-}
-
-/* BUTTON */
-.btn{
-  margin-top:25px;
-  padding:12px 28px;
-  border:1px solid var(--primary);
-  background:transparent;
-  color:var(--primary);
-  border-radius:12px;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.btn:hover{
-  background:var(--primary);
-  color:#000;
-}
-
-/* SECTIONS */
-section{
-  padding:80px 20px;
-}
-
-.title{
-  text-align:center;
-  font-size:2rem;
-  margin-bottom:40px;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-/* CARD */
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  padding:20px;
-  border-radius:16px;
-  backdrop-filter:blur(10px);
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  border-color:var(--primary);
-}
-
-footer{
-  text-align:center;
-  padding:30px;
-  opacity:.5;
-}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans Arabic',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+.bg-orbs{position:fixed;inset:0;z-index:0;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);animation:float 8s ease-in-out infinite}
+.orb1{width:500px;height:500px;background:rgba(0,229,192,0.12);top:-100px;left:-100px}
+.orb2{width:400px;height:400px;background:rgba(255,77,109,0.1);bottom:-100px;right:-100px;animation-delay:-4s}
+.orb3{width:300px;height:300px;background:rgba(0,100,255,0.08);top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:-2s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(6,10,18,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Space Mono',monospace;font-size:14px;color:var(--primary);letter-spacing:2px}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;transition:.3s}
+.nav-links a:hover{color:var(--primary)}
+.lang-toggle{display:flex;background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:99px;padding:3px}
+.lang-btn{padding:5px 14px;border-radius:99px;font-size:12px;font-family:'Space Mono',monospace;border:none;background:transparent;color:var(--muted);cursor:pointer;transition:.3s}
+.lang-btn.active{background:var(--primary);color:#060a12;font-weight:700}
+main{position:relative;z-index:2}
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 40px 60px;max-width:1100px;margin:0 auto}
+.hero-tag{display:inline-block;font-family:'Space Mono',monospace;font-size:12px;color:var(--primary);border:1px solid rgba(0,229,192,0.3);padding:6px 14px;border-radius:99px;margin-bottom:24px;letter-spacing:2px}
+.hero h1{font-size:clamp(3rem,7vw,5.5rem);font-weight:700;line-height:1.1;margin-bottom:8px}
+.hero h1 span{color:var(--primary)}
+.hero-sub{font-size:1.1rem;color:var(--muted);margin-bottom:32px;line-height:1.7;max-width:520px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{padding:13px 28px;background:var(--primary);color:#060a12;border:none;border-radius:10px;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:.3s;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:#00c4a6;transform:translateY(-2px)}
+.btn-outline{padding:13px 28px;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:10px;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:15px;cursor:pointer;transition:.3s;text-decoration:none;display:inline-block}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:40px;margin-top:50px;padding-top:40px;border-top:1px solid var(--border)}
+.stat-num{font-family:'Space Mono',monospace;font-size:2rem;font-weight:700;color:var(--primary)}
+.stat-label{font-size:13px;color:var(--muted);margin-top:4px}
+section{padding:100px 40px;max-width:1100px;margin:0 auto}
+.section-tag{font-family:'Space Mono',monospace;font-size:11px;color:var(--primary);letter-spacing:3px;margin-bottom:12px}
+.section-title{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;margin-bottom:50px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-text p{color:var(--muted);line-height:1.9;font-size:1rem;margin-bottom:16px}
+.about-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:30px}
+.about-card-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--border);font-size:14px}
+.about-card-row:last-child{border-bottom:none}
+.about-card-label{color:var(--muted)}
+.about-card-value{color:var(--primary);font-family:'Space Mono',monospace;font-size:13px}
+.langs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-bottom:40px}
+.lang-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center;transition:.3s}
+.lang-card:hover{border-color:rgba(0,229,192,0.3)}
+.lang-icon{font-size:2rem;margin-bottom:10px}
+.lang-name{font-family:'Space Mono',monospace;font-size:14px;color:var(--primary)}
+.lang-bar-wrap{margin-top:12px;background:rgba(255,255,255,0.05);border-radius:99px;height:4px}
+.lang-bar{height:4px;border-radius:99px;background:linear-gradient(90deg,var(--primary),#00a8ff)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.skill-category{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;transition:.3s}
+.skill-category:hover{border-color:rgba(0,229,192,0.3);transform:translateY(-4px)}
+.skill-cat-title{font-size:11px;color:var(--primary);letter-spacing:2px;font-family:'Space Mono',monospace;margin-bottom:16px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px}
+.skill-tag{background:rgba(0,229,192,0.08);border:1px solid rgba(0,229,192,0.15);color:var(--text);padding:5px 12px;border-radius:99px;font-size:12px}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+.project-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px;transition:.3s;display:flex;flex-direction:column;gap:12px}
+.project-card:hover{border-color:rgba(0,229,192,0.3);transform:translateY(-6px)}
+.project-card h3{font-size:1rem;font-weight:600}
+.project-card p{font-size:13px;color:var(--muted);line-height:1.7;flex:1}
+.project-link{display:inline-flex;align-items:center;gap:6px;color:var(--primary);text-decoration:none;font-size:13px;font-family:'Space Mono',monospace;transition:.3s}
+.project-link:hover{gap:10px}
+.project-langs{display:flex;flex-wrap:wrap;gap:6px}
+.project-lang{background:rgba(255,255,255,0.05);padding:3px 10px;border-radius:99px;font-size:11px;color:var(--muted)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.contact-text p{color:var(--muted);line-height:1.9;margin-bottom:24px}
+.contact-links{display:flex;flex-direction:column;gap:12px}
+.contact-link{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 20px;text-decoration:none;color:var(--text);transition:.3s}
+.contact-link:hover{border-color:rgba(0,229,192,0.3);color:var(--primary)}
+.contact-link-icon{width:36px;height:36px;background:rgba(0,229,192,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-family:'Space Mono',monospace;font-weight:700;color:var(--primary)}
+.contact-link-label{font-size:12px;color:var(--muted)}
+.contact-link-value{font-size:14px;font-weight:600}
+footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;position:relative;z-index:2}
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){nav{padding:16px 20px}.nav-links{display:none}.hero{padding:100px 20px 60px}.hero-stats{gap:20px}section{padding:70px 20px}.about-grid,.contact-wrap{grid-template-columns:1fr}}
 </style>
 </head>
-
 <body>
+<div class="bg-orbs"><div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div></div>
 
-<section class="hero">
+<nav>
+  <div class="nav-logo">ZA</div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about" class="t" data-ar="عني" data-en="About">عني</a></li>
+      <li><a href="#skills" class="t" data-ar="المهارات" data-en="Skills">المهارات</a></li>
+      <li><a href="#projects" class="t" data-ar="المشاريع" data-en="Projects">المشاريع</a></li>
+      <li><a href="#contact" class="t" data-ar="تواصل" data-en="Contact">تواصل</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('ar')">AR</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+<div class="hero">
   <div>
-    <h1>ZIAD</h1>
-    <p>Data Scientist | AI Enthusiast</p>
-    <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
-      استكشف المشاريع
-    </button>
+    <div class="hero-tag t" data-ar="عالم بيانات" data-en="DATA SCIENTIST">عالم بيانات</div>
+    <h1>Ziyad<br><span>Al-Abduljabbar</span></h1>
+    <p class="hero-sub t" data-ar="طالب علوم حاسب متخصص في علم البيانات — أحول البيانات الضخمة إلى رؤى قابلة للتطبيق باستخدام ML و NLP." data-en="Computer Science student specializing in Data Science — turning raw data into actionable insights using ML & NLP.">طالب علوم حاسب متخصص في علم البيانات — أحول البيانات الضخمة إلى رؤى قابلة للتطبيق باستخدام ML و NLP.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary t" data-ar="المشاريع" data-en="Projects">المشاريع</a>
+      <a href="https://www.linkedin.com/in/ziyad-alabduljabbar" target="_blank" class="btn-outline">LinkedIn ↗</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">4.98</div><div class="stat-label t" data-ar="المعدل / 5.00" data-en="GPA / 5.00">المعدل / 5.00</div></div>
+      <div><div class="stat-num">800K+</div><div class="stat-label t" data-ar="سجل بيانات" data-en="Records Analyzed">سجل بيانات</div></div>
+      <div><div class="stat-num">3+</div><div class="stat-label t" data-ar="مشاريع منشورة" data-en="Published Projects">مشاريع منشورة</div></div>
+    </div>
+  </div>
+</div>
+
+<section id="about" class="fade-in">
+  <div class="section-tag">// ABOUT</div>
+  <h2 class="section-title t" data-ar="من أنا" data-en="About Me">من أنا</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="t" data-ar="طالب في جامعة المجمعة، تخصص علوم الحاسب مسار علم البيانات، أتخرج عام 2026 بمعدل 4.98/5.00." data-en="Computer Science student at Majmaah University, Data Science track, graduating 2026 with a GPA of 4.98/5.00.">طالب في جامعة المجمعة، تخصص علوم الحاسب مسار علم البيانات، أتخرج عام 2026 بمعدل 4.98/5.00.</p>
+      <p class="t" data-ar="لدي خبرة عملية في تحليل مجموعات البيانات الضخمة التي تتجاوز 800,000 سجل، وتطوير نماذج التعلم الآلي ومعالجة اللغة الطبيعية." data-en="Hands-on experience analyzing datasets exceeding 800,000 records, developing ML models, and building NLP pipelines.">لدي خبرة عملية في تحليل مجموعات البيانات الضخمة التي تتجاوز 800,000 سجل، وتطوير نماذج التعلم الآلي ومعالجة اللغة الطبيعية.</p>
+      <p class="t" data-ar='مشروع تخرجي "الوراق" نظام توصية أكاديمي حسّن دقة التوصيات من 32.5% إلى 71.2%.' data-en='My graduation project "Alwarraq" is an academic recommendation system that improved accuracy from 32.5% to 71.2%.'>مشروع تخرجي "الوراق" نظام توصية أكاديمي حسّن دقة التوصيات من 32.5% إلى 71.2%.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-card-row"><span class="about-card-label t" data-ar="الجامعة" data-en="University">الجامعة</span><span class="about-card-value">Majmaah University</span></div>
+      <div class="about-card-row"><span class="about-card-label t" data-ar="التخصص" data-en="Major">التخصص</span><span class="about-card-value">Data Science Track</span></div>
+      <div class="about-card-row"><span class="about-card-label t" data-ar="المعدل" data-en="GPA">المعدل</span><span class="about-card-value">4.98 / 5.00</span></div>
+      <div class="about-card-row"><span class="about-card-label t" data-ar="التخرج" data-en="Graduation">التخرج</span><span class="about-card-value">2026</span></div>
+      <div class="about-card-row"><span class="about-card-label t" data-ar="الموقع" data-en="Location">الموقع</span><span class="about-card-value">Riyadh, SA</span></div>
+    </div>
   </div>
 </section>
 
-<section>
-  <h2 class="title">المهارات</h2>
-  <div class="grid">
-    <div class="card">Python</div>
-    <div class="card">Machine Learning</div>
-    <div class="card">Data Analysis</div>
-    <div class="card">Deep Learning</div>
+<section id="skills" class="fade-in">
+  <div class="section-tag">// SKILLS</div>
+  <h2 class="section-title t" data-ar="المهارات التقنية" data-en="Technical Skills">المهارات التقنية</h2>
+  <div class="langs-grid">
+    <div class="lang-card"><div class="lang-icon">🐍</div><div class="lang-name">Python</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:95%"></div></div></div>
+    <div class="lang-card"><div class="lang-icon">📊</div><div class="lang-name">R</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:85%"></div></div></div>
+    <div class="lang-card"><div class="lang-icon">🗄️</div><div class="lang-name">SQL</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:80%"></div></div></div>
+    <div class="lang-card"><div class="lang-icon">⚙️</div><div class="lang-name">C++</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:75%"></div></div></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-category"><div class="skill-cat-title">VISUALIZATION</div><div class="skill-tags"><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span><span class="skill-tag">Power BI</span></div></div>
+    <div class="skill-category"><div class="skill-cat-title">AI & NLP</div><div class="skill-tags"><span class="skill-tag">NLP</span><span class="skill-tag">LLM API</span><span class="skill-tag">RAG</span></div></div>
+    <div class="skill-category"><div class="skill-cat-title">DATA ANALYSIS</div><div class="skill-tags"><span class="skill-tag">Data Cleaning</span><span class="skill-tag">EDA</span><span class="skill-tag">Feature Engineering</span></div></div>
+    <div class="skill-category"><div class="skill-cat-title">MACHINE LEARNING</div><div class="skill-tags"><span class="skill-tag">Scikit-learn</span><span class="skill-tag">TF-IDF</span><span class="skill-tag">Recommendation Systems</span></div></div>
+    <div class="skill-category"><div class="skill-cat-title">TOOLS</div><div class="skill-tags"><span class="skill-tag">Git</span><span class="skill-tag">Google Colab</span><span class="skill-tag">SQLAlchemy</span></div></div>
   </div>
 </section>
 
-<section id="projects">
-  <h2 class="title">المشاريع</h2>
-  <div class="grid" id="projects-container"></div>
+<section id="projects" class="fade-in">
+  <div class="section-tag">// PROJECTS</div>
+  <h2 class="section-title t" data-ar="المشاريع" data-en="Projects">المشاريع</h2>
+  <div class="projects-grid" id="projects-container"></div>
 </section>
 
-<footer>
-  © Ziad Portfolio
-</footer>
+<section id="contact" class="fade-in">
+  <div class="section-tag">// CONTACT</div>
+  <h2 class="section-title t" data-ar="تواصل معي" data-en="Get In Touch">تواصل معي</h2>
+  <div class="contact-wrap">
+    <div class="contact-text">
+      <p class="t" data-ar="هل لديك مشروع أو فرصة؟ أنا دائماً مهتم بالتواصل مع المختصين في مجال علم البيانات." data-en="Have a project or opportunity? I'm always interested in connecting with data science professionals.">هل لديك مشروع أو فرصة؟ أنا دائماً مهتم بالتواصل مع المختصين في مجال علم البيانات.</p>
+      <a href="https://www.linkedin.com/in/ziyad-alabduljabbar" target="_blank" class="btn-primary t" data-ar="تواصل على LinkedIn ↗" data-en="Connect on LinkedIn ↗">تواصل على LinkedIn ↗</a>
+    </div>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/ziyad-alabduljabbar" target="_blank" class="contact-link">
+        <div class="contact-link-icon">in</div>
+        <div><div class="contact-link-label">LinkedIn</div><div class="contact-link-value">ziyad-alabduljabbar</div></div>
+      </a>
+      <a href="https://github.com/ziyad-alabduljabbar" target="_blank" class="contact-link">
+        <div class="contact-link-icon">GH</div>
+        <div><div class="contact-link-label">GitHub</div><div class="contact-link-value">ziyad-alabduljabbar</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><p class="t" data-ar="© 2025 زياد العبدالجبار — مبني بشغف للبيانات" data-en="© 2025 Ziyad Al-Abduljabbar — Built with passion for data">© 2025 زياد العبدالجبار — مبني بشغف للبيانات</p></footer>
 
 <script>
-const username="Ziyad-alabduljabbar";
+const projects = {
+  ar:[
+    {name:"الوراق - نظام توصية الكتب الأكاديمية",desc:"نظام توصية باستخدام TF-IDF وCosine Similarity على 10,000+ كتاب. حسّن الدقة من 32.5% إلى 71.2% مع تكامل LLaMA LLM و RAG.",url:"https://github.com/ziyad-alabduljabbar",topics:["Python","NLP","RAG","LLM"]},
+    {name:"تحليل العقارات السعودية",desc:"تحليل 800,000+ إعلان عقاري في السعودية. الكشف عن اتجاهات السوق والتوزيع الإقليمي وعلاقة الحجم بالسعر.",url:"https://github.com/ziyad-alabduljabbar/Saudi-Real-Estate-Analysis",topics:["Python","Pandas","Seaborn","EDA"]},
+    {name:"تحليل حوادث المرور في السعودية",desc:"تحليل بيانات حوادث 2016-2019 عبر 13 منطقة سعودية باستخدام R وtidyverse.",url:"https://github.com/ziyad-alabduljabbar/saudi-traffic-accidents-analysis",topics:["R","tidyverse","Data Analysis"]},
+    {name:"نظام إدارة المطعم (C++)",desc:"نظام يطبق هياكل البيانات: Linked List وStack وQueue.",url:"https://github.com/ziyad-alabduljabbar/Restaurant-DataStructures",topics:["C++","OOP","Data Structures"]},
+    {name:"نظام إدارة المجتمع (C++)",desc:"نظام يطبق مبادئ البرمجة كائنية التوجه مع الوراثة وتعدد الأشكال.",url:"https://github.com/ziyad-alabduljabbar/CommunityMember-TermProject",topics:["C++","OOP"]}
+  ],
+  en:[
+    {name:"Alwarraq - Academic Book Recommendation",desc:"Recommendation system using TF-IDF & Cosine Similarity on 10,000+ books. Improved accuracy from 32.5% to 71.2% with LLaMA LLM & RAG pipeline.",url:"https://github.com/ziyad-alabduljabbar",topics:["Python","NLP","RAG","LLM"]},
+    {name:"Saudi Real Estate Analysis",desc:"Analysis of 800,000+ listings in Saudi Arabia, uncovering market trends, regional distribution, and price correlations.",url:"https://github.com/ziyad-alabduljabbar/Saudi-Real-Estate-Analysis",topics:["Python","Pandas","Seaborn","EDA"]},
+    {name:"Saudi Traffic Accidents Analysis",desc:"Analysis of accident data 2016-2019 across 13 Saudi regions using R and tidyverse.",url:"https://github.com/ziyad-alabduljabbar/saudi-traffic-accidents-analysis",topics:["R","tidyverse","Data Analysis"]},
+    {name:"Restaurant Management System (C++)",desc:"Restaurant system implementing Linked List, Stack and Queue data structures.",url:"https://github.com/ziyad-alabduljabbar/Restaurant-DataStructures",topics:["C++","OOP","Data Structures"]},
+    {name:"Community Member System (C++)",desc:"OOP-based community management system with polymorphism and inheritance.",url:"https://github.com/ziyad-alabduljabbar/CommunityMember-TermProject",topics:["C++","OOP"]}
+  ]
+};
 
-fetch(`https://api.github.com/users/${username}/repos`)
-.then(r=>r.json())
-.then(data=>{
-  const container=document.getElementById("projects-container");
+let lang = "ar";
 
-  data.slice(0,6).forEach(repo=>{
-    const div=document.createElement("div");
-    div.className="card";
-    div.innerHTML=`
-      <h3>${repo.name}</h3>
-      <p>${repo.description||"Project"}</p>
-      <a href="${repo.html_url}" target="_blank" style="color:#00ffd5;">GitHub</a>
-    `;
-    container.appendChild(div);
+function renderProjects(l){
+  const c = document.getElementById("projects-container");
+  c.innerHTML = "";
+  projects[l].forEach(p=>{
+    const d = document.createElement("div");
+    d.className = "project-card";
+    d.innerHTML = `<h3>${p.name}</h3><p>${p.desc}</p><div class="project-langs">${p.topics.map(t=>`<span class="project-lang">${t}</span>`).join("")}</div><a href="${p.url}" target="_blank" class="project-link">${l==='ar'?'عرض على GitHub →':'View on GitHub →'}</a>`;
+    c.appendChild(d);
   });
-});
-</script>
+}
 
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.documentElement.dir = l==='ar'?'rtl':'ltr';
+  document.querySelectorAll('.t').forEach(el=>{ if(el.dataset[l]) el.textContent=el.dataset[l]; });
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
+  renderProjects(l);
+}
+
+renderProjects("ar");
+const obs = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:0.1});
+document.querySelectorAll(".fade-in").forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
