@@ -14,6 +14,7 @@ body{font-family:'IBM Plex Sans Arabic',sans-serif;background:var(--bg);color:va
 .orb{position:absolute;border-radius:50%;filter:blur(100px);animation:float 8s ease-in-out infinite}
 .orb1{width:500px;height:500px;background:rgba(0,229,192,0.12);top:-100px;left:-100px}
 .orb2{width:400px;height:400px;background:rgba(255,77,109,0.1);bottom:-100px;right:-100px;animation-delay:-4s}
+.orb3{width:300px;height:300px;background:rgba(0,100,255,0.08);top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:-2s}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(6,10,18,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 .nav-logo{font-family:'Space Mono',monospace;font-size:14px;color:var(--primary);letter-spacing:2px}
@@ -27,7 +28,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 main{position:relative;z-index:2}
 .hero{min-height:100vh;display:flex;align-items:center;padding:100px 40px 60px;max-width:1100px;margin:0 auto}
 .hero-tag{display:inline-block;font-family:'Space Mono',monospace;font-size:12px;color:var(--primary);border:1px solid rgba(0,229,192,0.3);padding:6px 14px;border-radius:99px;margin-bottom:24px;letter-spacing:2px}
-.hero h1{font-size:clamp(3rem,7vw,5rem);font-weight:700;line-height:1.1;margin-bottom:8px}
+.hero h1{font-size:clamp(3rem,7vw,5.5rem);font-weight:700;line-height:1.1;margin-bottom:8px}
 .hero h1 span{color:var(--primary)}
 .hero-sub{font-size:1.1rem;color:var(--muted);margin-bottom:32px;line-height:1.7;max-width:550px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
@@ -35,11 +36,14 @@ main{position:relative;z-index:2}
 .btn-primary:hover{background:#00c4a6;transform:translateY(-2px)}
 .btn-outline{padding:13px 28px;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:10px;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:15px;cursor:pointer;transition:.3s;text-decoration:none;display:inline-block}
 .btn-outline:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
+
+/* Stats Grid */
 .hero-stats{display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:24px;margin-top:50px;padding-top:40px;border-top:1px solid var(--border)}
 .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;transition:0.3s}
 .stat-card:hover{border-color:var(--primary);transform:translateY(-5px)}
 .stat-num{font-family:'Space Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--primary)}
 .stat-label{font-size:12px;color:var(--muted);margin-top:8px}
+
 section{padding:100px 40px;max-width:1100px;margin:0 auto}
 .section-tag{font-family:'Space Mono',monospace;font-size:11px;color:var(--primary);letter-spacing:3px;margin-bottom:12px}
 .section-title{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;margin-bottom:50px}
@@ -50,28 +54,51 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto}
 .about-card-row:last-child{border-bottom:none}
 .about-card-label{color:var(--muted)}
 .about-card-value{color:var(--primary);font-family:'Space Mono',monospace;font-size:13px}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+
+/* Skills section (The old design restored) */
+.langs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-bottom:40px}
+.lang-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center;transition:.3s}
+.lang-card:hover{border-color:rgba(0,229,192,0.3)}
+.lang-icon{font-size:2rem;margin-bottom:10px}
+.lang-name{font-family:'Space Mono',monospace;font-size:14px;color:var(--primary)}
+.lang-bar-wrap{margin-top:12px;background:rgba(255,255,255,0.05);border-radius:99px;height:4px}
+.lang-bar{height:4px;border-radius:99px;background:linear-gradient(90deg,var(--primary),#00a8ff)}
+
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
 .skill-category{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;transition:.3s}
-.skill-category:hover{border-color:rgba(0,229,192,0.3)}
+.skill-category:hover{border-color:rgba(0,229,192,0.3);transform:translateY(-4px)}
 .skill-cat-title{font-size:11px;color:var(--primary);letter-spacing:2px;font-family:'Space Mono',monospace;margin-bottom:16px;text-transform:uppercase}
 .skill-tags{display:flex;flex-wrap:wrap;gap:8px}
 .skill-tag{background:rgba(0,229,192,0.08);border:1px solid rgba(0,229,192,0.15);color:var(--text);padding:5px 12px;border-radius:99px;font-size:12px}
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-.project-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px;transition:.3s;display:flex;flex-direction:column;gap:16px;position:relative;overflow:hidden}
+
+/* Projects Section */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
+.project-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:28px;transition:.3s;display:flex;flex-direction:column;gap:12px}
 .project-card:hover{border-color:rgba(0,229,192,0.3);transform:translateY(-6px)}
-.project-card h3{font-size:1.1rem;font-weight:600}
+.project-card h3{font-size:1rem;font-weight:600}
 .project-card p{font-size:13px;color:var(--muted);line-height:1.7;flex:1}
 .project-link{display:inline-flex;align-items:center;gap:6px;color:var(--primary);text-decoration:none;font-size:13px;font-family:'Space Mono',monospace;transition:.3s}
 .project-link:hover{gap:10px}
 .project-langs{display:flex;flex-wrap:wrap;gap:6px}
 .project-lang{background:rgba(255,255,255,0.05);padding:3px 10px;border-radius:99px;font-size:11px;color:var(--muted)}
+
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.contact-text p{color:var(--muted);line-height:1.9;margin-bottom:24px}
+.contact-links{display:flex;flex-direction:column;gap:12px}
+.contact-link{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 20px;text-decoration:none;color:var(--text);transition:.3s}
+.contact-link:hover{border-color:rgba(0,229,192,0.3);color:var(--primary)}
+.contact-link-icon{width:36px;height:36px;background:rgba(0,229,192,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-family:'Space Mono',monospace;font-weight:700;color:var(--primary)}
+.contact-link-label{font-size:12px;color:var(--muted)}
+.contact-link-value{font-size:14px;font-weight:600}
+
+footer{text-align:center;padding:40px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;position:relative;z-index:2}
 .fade-in{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
-@media(max-width:768px){nav{padding:16px 20px}.nav-links{display:none}.hero{padding:100px 20px 60px}.hero-stats{grid-template-columns:1fr 1fr;gap:16px}section{padding:70px 20px}.about-grid{grid-template-columns:1fr}}
+@media(max-width:768px){nav{padding:16px 20px}.nav-links{display:none}.hero{padding:100px 20px 60px}.hero-stats{grid-template-columns:1fr 1fr;gap:16px}section{padding:70px 20px}.about-grid,.contact-wrap{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="bg-orbs"><div class="orb orb1"></div><div class="orb orb2"></div></div>
+<div class="bg-orbs"><div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div></div>
 
 <nav>
   <div class="nav-logo">PORTFOLIO</div>
@@ -80,6 +107,7 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto}
       <li><a href="#about" class="t" data-ar="عني" data-en="About">عني</a></li>
       <li><a href="#skills" class="t" data-ar="المهارات" data-en="Skills">المهارات</a></li>
       <li><a href="#projects" class="t" data-ar="المشاريع" data-en="Projects">المشاريع</a></li>
+      <li><a href="#contact" class="t" data-ar="تواصل" data-en="Contact">تواصل</a></li>
     </ul>
     <div class="lang-toggle">
       <button class="lang-btn active" onclick="setLang('ar')">AR</button>
@@ -121,7 +149,7 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto}
 </div>
 
 <section id="about" class="fade-in">
-  <div class="section-tag">// BIOGRAPHY</div>
+  <div class="section-tag">// ABOUT</div>
   <h2 class="section-title t" data-ar="نبذة عني" data-en="About Me">نبذة عني</h2>
   <div class="about-grid">
     <div class="about-text">
@@ -132,31 +160,27 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto}
     <div class="about-card">
       <div class="about-card-row"><span class="about-card-label t" data-ar="الجامعة" data-en="University">الجامعة</span><span class="about-card-value">Majmaah University</span></div>
       <div class="about-card-row"><span class="about-card-label t" data-ar="التخرج" data-en="Graduation">التخرج</span><span class="about-card-value">2026</span></div>
-      <div class="about-card-row"><span class="about-card-label t" data-ar="المسار" data-en="Track">المسار</span><span class="about-card-value">Data Science</span></div>
+      <div class="about-card-row"><span class="about-card-label t" data-ar="المسار" data-en="Track">المسار</span><span class="about-card-value">Data Science Track</span></div>
     </div>
   </div>
 </section>
 
 <section id="skills" class="fade-in">
-  <div class="section-tag">// TECH STACK</div>
+  <div class="section-tag">// SKILLS</div>
   <h2 class="section-title t" data-ar="المهارات التقنية" data-en="Technical Skills">المهارات التقنية</h2>
+  
+  <div class="langs-grid">
+    <div class="lang-card"><div class="lang-icon">🐍</div><div class="lang-name">Python</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:95%"></div></div></div>
+    <div class="lang-card"><div class="lang-icon">📊</div><div class="lang-name">R</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:85%"></div></div></div>
+    <div class="lang-card"><div class="lang-icon">🗄️</div><div class="lang-name">SQL</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:80%"></div></div></div>
+    <div class="lang-card"><div class="lang-icon">⚙️</div><div class="lang-name">C++</div><div class="lang-bar-wrap"><div class="lang-bar" style="width:75%"></div></div></div>
+  </div>
+  
   <div class="skills-grid">
     <div class="skill-category">
-      <div class="skill-cat-title">Programming</div>
+      <div class="skill-cat-title">VISUALIZATION</div>
       <div class="skill-tags">
-        <span class="skill-tag">C++</span><span class="skill-tag">Python</span><span class="skill-tag">R</span><span class="skill-tag">SQL</span>
-      </div>
-    </div>
-    <div class="skill-category">
-      <div class="skill-cat-title">Data Analysis</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Data Cleaning</span><span class="skill-tag">EDA</span><span class="skill-tag">Feature Engineering</span>
-      </div>
-    </div>
-    <div class="skill-category">
-      <div class="skill-cat-title">Machine Learning</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Scikit-learn</span><span class="skill-tag">Recommendation Systems</span>
+        <span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span><span class="skill-tag">Power BI</span>
       </div>
     </div>
     <div class="skill-category">
@@ -166,13 +190,19 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto}
       </div>
     </div>
     <div class="skill-category">
-      <div class="skill-cat-title">Visualization</div>
+      <div class="skill-cat-title">DATA ANALYSIS</div>
       <div class="skill-tags">
-        <span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span><span class="skill-tag">Power BI</span>
+        <span class="skill-tag">Data Cleaning</span><span class="skill-tag">EDA</span><span class="skill-tag">Feature Engineering</span>
       </div>
     </div>
     <div class="skill-category">
-      <div class="skill-cat-title">Tools & Frameworks</div>
+      <div class="skill-cat-title">MACHINE LEARNING</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Scikit-learn</span><span class="skill-tag">Recommendation Systems</span>
+      </div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-cat-title">TOOLS & FRAMEWORKS</div>
       <div class="skill-tags">
         <span class="skill-tag">Git</span><span class="skill-tag">Google Colab</span><span class="skill-tag">SQLAlchemy</span>
       </div>
@@ -181,9 +211,30 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto}
 </section>
 
 <section id="projects" class="fade-in">
-  <div class="section-tag">// PORTFOLIO</div>
+  <div class="section-tag">// PROJECTS</div>
   <h2 class="section-title t" data-ar="مشاريع GitHub" data-en="GitHub Projects">مشاريع GitHub</h2>
   <div class="projects-grid" id="projects-container"></div>
+</section>
+
+<section id="contact" class="fade-in">
+  <div class="section-tag">// CONTACT</div>
+  <h2 class="section-title t" data-ar="تواصل معي" data-en="Get In Touch">تواصل معي</h2>
+  <div class="contact-wrap">
+    <div class="contact-text">
+      <p class="t" data-ar="هل تبحث عن متدرب أو متعاون في مجال علم البيانات؟ أنا دائماً مهتم بالتواصل ومناقشة الفرص المهنية." data-en="Looking for a data science intern or collaborator? I'm always open to discussing professional opportunities.">هل تبحث عن متدرب أو متعاون في مجال علم البيانات؟ أنا دائماً مهتم بالتواصل ومناقشة الفرص المهنية.</p>
+      <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="btn-primary t" data-ar="تواصل على LinkedIn ↗" data-en="Connect on LinkedIn ↗">تواصل على LinkedIn ↗</a>
+    </div>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" class="contact-link">
+        <div class="contact-link-icon">in</div>
+        <div><div class="contact-link-label">LinkedIn</div><div class="contact-link-value">YOUR_LINKEDIN</div></div>
+      </a>
+      <a href="https://github.com/YOUR_GITHUB" target="_blank" class="contact-link">
+        <div class="contact-link-icon">GH</div>
+        <div><div class="contact-link-label">GitHub</div><div class="contact-link-value">YOUR_GITHUB</div></div>
+      </a>
+    </div>
+  </div>
 </section>
 </main>
 
