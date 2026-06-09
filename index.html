@@ -73,6 +73,16 @@ section{padding:100px 40px;max-width:1100px;margin:0 auto}
 .project-link:hover{gap:10px}
 .project-langs{display:flex;flex-wrap:wrap;gap:6px}
 .project-lang{background:rgba(255,255,255,0.05);padding:3px 10px;border-radius:99px;font-size:11px;color:var(--muted)}
+.featured-card{grid-column:1/-1;background:linear-gradient(135deg,rgba(0,229,192,0.08),rgba(0,168,255,0.06));border:1px solid rgba(0,229,192,0.3);border-radius:24px;padding:36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;transition:.3s}
+.featured-card:hover{border-color:rgba(0,229,192,0.6);transform:translateY(-4px)}
+.featured-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,192,0.15);border:1px solid rgba(0,229,192,0.3);color:var(--primary);font-size:11px;font-family:'Space Mono',monospace;padding:4px 12px;border-radius:99px;margin-bottom:14px;letter-spacing:1px}
+.featured-card h3{font-size:1.4rem;font-weight:700;margin-bottom:10px}
+.featured-card .desc{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:16px}
+.featured-stats{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:16px}
+.f-stat{text-align:center;background:rgba(0,0,0,0.2);border:1px solid var(--border);border-radius:12px;padding:12px 16px;min-width:80px}
+.f-stat-num{font-family:'Space Mono',monospace;font-size:1.2rem;font-weight:700;color:var(--primary)}
+.f-stat-label{font-size:11px;color:var(--muted);margin-top:4px}
+@media(max-width:768px){.featured-card{grid-template-columns:1fr}.featured-stats{gap:12px}}
 .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .contact-text p{color:var(--muted);line-height:1.9;margin-bottom:24px}
 .contact-links{display:flex;flex-direction:column;gap:12px}
@@ -121,14 +131,14 @@ html[dir="rtl"] .stat-item:last-child{border-left:none}
   <div>
     <div class="hero-tag t" data-ar="طالب علوم حاسب | مسار علم البيانات" data-en="CS STUDENT | DATA SCIENCE TRACK">CS STUDENT | DATA SCIENCE TRACK</div>
     <h1 id="hero-name">Ziyad<span> Al-Abduljabbar</span></h1>
-    <p class="hero-sub t" data-ar="شغوف ببناء حلول تعتمد على البيانات باستخدام ML وNLP وLLMs لحل مشكلات العالم الحقيقي." data-en="Passionate about building data-driven solutions using ML, NLP, and LLMs to solve real-world problems.">Passionate about building data-driven solutions using ML, NLP, and LLMs to solve real-world problems.</p>
+    <p class="hero-sub t" data-ar="أركز على تحويل مجموعات البيانات الضخمة إلى حلول ذكية ورؤى تحليلية، مع اهتمام خاص بتطوير أنظمة التوصية ومعالجة اللغات الطبيعية." data-en="Focused on transforming large datasets into intelligent solutions and analytical insights, with a special interest in recommendation systems and NLP.">Focused on transforming large datasets into intelligent solutions and analytical insights, with a special interest in recommendation systems and NLP.</p>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary t" data-ar="استعرض المشاريع" data-en="View Projects">View Projects</a>
       <a href="https://linkedin.com/in/ziyad-al-abduljabbar" target="_blank" class="btn-outline">LinkedIn ↗</a>
     </div>
     <div class="hero-stats-panel">
       <div class="stat-item"><div class="stat-num">800K+</div><div class="stat-label t" data-ar="سجل بيانات تم تحليله" data-en="Records Analyzed">Records Analyzed</div></div>
-      <div class="stat-item"><div class="stat-num">GP2</div><div class="stat-label t" data-ar="مشروع التخرج قيد التنفيذ" data-en="Graduation Project (Ongoing)">Graduation Project (Ongoing)</div></div>
+      <div class="stat-item"><div class="stat-num">58.3%</div><div class="stat-label t" data-ar="دقة توصيات الوراق" data-en="Al-Warraq Hit Rate">Al-Warraq Hit Rate</div></div>
       <div class="stat-item"><div class="stat-num">4+</div><div class="stat-label t" data-ar="مشاريع منشورة" data-en="Published Projects">Published Projects</div></div>
       <div class="stat-item"><div class="stat-num">10+</div><div class="stat-label t" data-ar="لغات وتقنيات برمجة" data-en="Tech Stacks & Tools">Tech Stacks & Tools</div></div>
     </div>
@@ -140,16 +150,15 @@ html[dir="rtl"] .stat-item:last-child{border-left:none}
   <h2 class="section-title t" data-ar="نبذة عني" data-en="About Me">About Me</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p class="t" data-ar="أنا طالب علوم حاسب في السنة الأخيرة بجامعة المجمعة، مسار في مسار علم البيانات. أمتلك شغفاً كبيراً بالتعامل مع البيانات المعقدة وبناء النماذج التي تحل مشاكل واقعية." data-en="Final year Computer Science student at Majmaah University, Data Science Track. Passionate about handling complex data and building models that solve real-world problems.">Final year Computer Science student at Majmaah University, Data Science Track. Passionate about handling complex data and building models that solve real-world problems.</p>
+      <p class="t" data-ar="أنا طالب في السنة الأخيرة بجامعة المجمعة، متخصص في مسار علم البيانات. أمتلك شغفاً كبيراً بالتعامل مع البيانات المعقدة وبناء النماذج التي تحل مشاكل واقعية." data-en="Final year student at Majmaah University, specializing in Data Science. Passionate about handling complex data and building models that solve real-world problems.">Final year student at Majmaah University, specializing in Data Science. Passionate about handling complex data and building models that solve real-world problems.</p>
       <p class="t" data-ar="خبرتي العملية تشمل تحليل أكثر من 800 ألف سجل لبيانات العقارات السعودية، وتطوير وتطبيق مفاهيم البرمجة المتقدمة وهياكل البيانات." data-en="My experience includes analyzing over 800,000 Saudi real estate records and applying advanced programming concepts and data structures.">My experience includes analyzing over 800,000 Saudi real estate records and applying advanced programming concepts and data structures.</p>
-      <p class="t" data-ar="أعمل حالياً على مشروع تخرجي 'الورّاق'، وهو نظام توصية أكاديمي يهدف لرفع دقة التوصيات باستخدام خوارزميات NLP ودمج LLM API." data-en="Currently working on my graduation project 'Al-Warraq', an academic recommendation system aiming to boost accuracy using NLP algorithms and LLM APIs.">Currently working on my graduation project 'Al-Warraq', an academic recommendation system aiming to boost accuracy using NLP algorithms and LLM APIs.</p>
+      <p class="t" data-ar="طوّرت مشروع تخرجي 'الورّاق'، وهو نظام توصية أكاديمي حقق دقة 58.3% في وضع Favorites و71.4% في Precision@1، باستخدام TF-IDF و NLP و LLM API." data-en="Developed my graduation project 'Al-Warraq', an academic book recommender system achieving 58.3% Hit Rate and 71.4% Precision@1, powered by TF-IDF, NLP, and LLM APIs.">Developed my graduation project 'Al-Warraq', an academic book recommender system achieving 58.3% Hit Rate and 71.4% Precision@1, powered by TF-IDF, NLP, and LLM APIs.</p>
     </div>
     <div class="about-card">
       <div class="about-card-row"><span class="about-card-label t" data-ar="الجامعة" data-en="University">University</span><span class="about-card-value">Majmaah University</span></div>
       <div class="about-card-row"><span class="about-card-label t" data-ar="التخرج" data-en="Graduation">Graduation</span><span class="about-card-value">2026</span></div>
-      <div class="about-card-row"><span class="about-card-label t" data-ar="تخصص" data-en="Track">Major</span><span class="about-card-value">Computer Science</span></div>
+      <div class="about-card-row"><span class="about-card-label t" data-ar="التخصص" data-en="Major">Major</span><span class="about-card-value">Computer Science</span></div>
       <div class="about-card-row"><span class="about-card-label t" data-ar="المسار" data-en="Track">Track</span><span class="about-card-value">Data Science Track</span></div>
-
     </div>
   </div>
 </section>
@@ -174,6 +183,35 @@ html[dir="rtl"] .stat-item:last-child{border-left:none}
 <section id="projects" class="fade-in">
   <div class="section-tag">// PROJECTS</div>
   <h2 class="section-title t" data-ar="مشاريع GitHub" data-en="GitHub Projects">GitHub Projects</h2>
+
+  <!-- Al-Warraq Featured Card -->
+  <div class="featured-card" style="margin-bottom:24px">
+    <div>
+      <div class="featured-badge">🎓 <span class="t" data-ar="مشروع التخرج" data-en="GRADUATION PROJECT">GRADUATION PROJECT</span></div>
+      <h3 class="t" data-ar="الوراق — نظام توصية الكتب الأكاديمية" data-en="Al-Warraq — Academic Book Recommender System">Al-Warraq — Academic Book Recommender System</h3>
+      <p class="desc t" data-ar="نظام توصية أكاديمي متكامل لطلاب الجامعات يستخدم Content-Based Filtering (TF-IDF + Cosine Similarity) مع تصحيح إملائي بـ SymSpell، وتوصيات مخصصة، وواجهة Flask كاملة، ومكتبة من 10,000+ كتاب. يتضمن chatbot مدعوم بـ LLM (Groq & SambaNova) للتفاعل مع محتوى الكتب." data-en="A full-stack academic book recommender for university students using Content-Based Filtering (TF-IDF + Cosine Similarity), SymSpell correction, personalized recommendations, and a Flask web app with 10,000+ books. Features an AI-powered chatbot librarian (Groq & SambaNova APIs) for interactive book exploration.">A full-stack academic book recommender for university students using Content-Based Filtering (TF-IDF + Cosine Similarity), SymSpell correction, personalized recommendations, and a Flask web app with 10,000+ books. Features an AI-powered chatbot librarian (Groq & SambaNova APIs) for interactive book exploration.</p>
+      <div class="featured-stats">
+        <div class="f-stat"><div class="f-stat-num">58.3%</div><div class="f-stat-label">Hit Rate</div></div>
+        <div class="f-stat"><div class="f-stat-num">71.4%</div><div class="f-stat-label">Precision@1</div></div>
+        <div class="f-stat"><div class="f-stat-num">10K+</div><div class="f-stat-label t" data-ar="كتاب" data-en="Books">Books</div></div>
+        <div class="f-stat"><div class="f-stat-num">19ms</div><div class="f-stat-label t" data-ar="زمن الاستجابة" data-en="Avg Latency">Avg Latency</div></div>
+      </div>
+      <div class="project-langs" style="margin-bottom:16px">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Flask</span>
+        <span class="skill-tag">TF-IDF</span>
+        <span class="skill-tag">NLP</span>
+        <span class="skill-tag">LLM API</span>
+        <span class="skill-tag">SQLite</span>
+        <span class="skill-tag">SymSpell</span>
+        <span class="skill-tag">Scikit-learn</span>
+      </div>
+      <a href="https://github.com/Ziyad-alabduljabbar/Al-warraq" target="_blank" class="project-link" style="font-size:14px">
+        <span class="t" data-ar="عرض على GitHub" data-en="View on GitHub">View on GitHub</span> →
+      </a>
+    </div>
+  </div>
+
   <div class="projects-grid" id="projects-container"></div>
 </section>
 
