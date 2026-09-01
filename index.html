@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
@@ -28,6 +29,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:fl
 main{position:relative;z-index:2}
 .hero{min-height:100vh;display:flex;align-items:center;padding:100px 40px 60px;max-width:1100px;margin:0 auto}
 .hero-tag{display:inline-block;font-family:'Space Mono',monospace;font-size:12px;color:var(--primary);border:1px solid rgba(0,229,192,0.3);padding:6px 14px;border-radius:99px;margin-bottom:24px;letter-spacing:2px}
+.hero-badge{display:inline-block;font-family:'Space Mono',monospace;font-size:12px;color:#ffb020;border:1px solid rgba(255,176,32,0.35);background:rgba(255,176,32,0.08);padding:6px 14px;border-radius:99px;margin-bottom:24px;margin-inline-start:10px;letter-spacing:1px}
 .hero h1{font-size:clamp(3rem,7vw,5.5rem);font-weight:700;line-height:1.1;margin-bottom:8px}
 .hero h1 span{color:var(--primary)}
 .hero-sub{font-size:1.1rem;color:var(--muted);margin-bottom:32px;line-height:1.7;max-width:550px}
@@ -130,6 +132,7 @@ html[dir="rtl"] .stat-item:last-child{border-left:none}
 <div class="hero">
   <div>
     <div class="hero-tag t" data-ar="طالب علوم حاسب | مسار علم البيانات" data-en="CS STUDENT | DATA SCIENCE TRACK">CS STUDENT | DATA SCIENCE TRACK</div>
+    <div class="hero-badge t" data-ar="متدرب تدريب تعاوني في سدايا (SDAIA)" data-en="Cooperative Trainee at SDAIA">Cooperative Trainee at SDAIA</div>
     <h1 id="hero-name">Ziyad<span> Al-Abduljabbar</span></h1>
     <p class="hero-sub t" data-ar="أركز على تحويل مجموعات البيانات الضخمة إلى حلول ذكية ورؤى تحليلية، مع اهتمام خاص بتطوير أنظمة التوصية ومعالجة اللغات الطبيعية." data-en="Focused on transforming large datasets into intelligent solutions and analytical insights, with a special interest in recommendation systems and NLP.">Focused on transforming large datasets into intelligent solutions and analytical insights, with a special interest in recommendation systems and NLP.</p>
     <div class="hero-btns">
@@ -151,10 +154,12 @@ html[dir="rtl"] .stat-item:last-child{border-left:none}
   <div class="about-grid">
     <div class="about-text">
       <p class="t" data-ar="أنا طالب في السنة الأخيرة بجامعة المجمعة، متخصص في مسار علم البيانات. أمتلك شغفاً كبيراً بالتعامل مع البيانات المعقدة وبناء النماذج التي تحل مشاكل واقعية." data-en="Final year student at Majmaah University, specializing in Data Science. Passionate about handling complex data and building models that solve real-world problems.">Final year student at Majmaah University, specializing in Data Science. Passionate about handling complex data and building models that solve real-world problems.</p>
+      <p class="t" data-ar="أنا حالياً متدرب تدريب تعاوني في الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا)." data-en="I am currently a cooperative trainee at the Saudi Data and AI Authority (SDAIA).">I am currently a cooperative trainee at the Saudi Data and AI Authority (SDAIA).</p>
       <p class="t" data-ar="خبرتي العملية تشمل تحليل أكثر من 800 ألف سجل لبيانات العقارات السعودية، وتطوير وتطبيق مفاهيم البرمجة المتقدمة وهياكل البيانات." data-en="My experience includes analyzing over 800,000 Saudi real estate records and applying advanced programming concepts and data structures.">My experience includes analyzing over 800,000 Saudi real estate records and applying advanced programming concepts and data structures.</p>
       <p class="t" data-ar="طوّرت مشروع تخرجي 'الورّاق'، وهو نظام توصية أكاديمي حقق دقة 58.3% في وضع Favorites و71.4% في Precision@1، باستخدام TF-IDF و NLP و LLM API." data-en="Developed my graduation project 'Al-Warraq', an academic book recommender system achieving 58.3% Hit Rate and 71.4% Precision@1, powered by TF-IDF, NLP, and LLM APIs.">Developed my graduation project 'Al-Warraq', an academic book recommender system achieving 58.3% Hit Rate and 71.4% Precision@1, powered by TF-IDF, NLP, and LLM APIs.</p>
     </div>
     <div class="about-card">
+      <div class="about-card-row"><span class="about-card-label t" data-ar="التدريب التعاوني" data-en="Co-op Training">Co-op Training</span><span class="about-card-value">SDAIA (سدايا)</span></div>
       <div class="about-card-row"><span class="about-card-label t" data-ar="الجامعة" data-en="University">University</span><span class="about-card-value">Majmaah University</span></div>
       <div class="about-card-row"><span class="about-card-label t" data-ar="التخرج" data-en="Graduation">Graduation</span><span class="about-card-value">2026</span></div>
       <div class="about-card-row"><span class="about-card-label t" data-ar="التخصص" data-en="Major">Major</span><span class="about-card-value">Computer Science</span></div>
@@ -185,6 +190,7 @@ html[dir="rtl"] .stat-item:last-child{border-left:none}
   <h2 class="section-title t" data-ar="مشاريع GitHub" data-en="GitHub Projects">GitHub Projects</h2>
 
   <!-- Al-Warraq Featured Card -->
+
   <div class="featured-card" style="margin-bottom:24px">
     <div>
       <div class="featured-badge">🎓 <span class="t" data-ar="مشروع التخرج" data-en="GRADUATION PROJECT">GRADUATION PROJECT</span></div>
@@ -289,5 +295,6 @@ renderProjects("en");
 const obs = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:0.1});
 document.querySelectorAll(".fade-in").forEach(el=>obs.observe(el));
 </script>
+
 </body>
 </html>
